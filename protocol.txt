@@ -1,0 +1,13 @@
+1. login request 
+ 1-1. validation               [(s → c)]
+2. login 
+ 2-1. validation(password)         [(c → s)]
+3. rlogin
+ 3-1. validation(password) == access : rtsp_url   [(s → c)]
+ 3-2. validation(password) == deny : return    [(s → c)]
+4. live or recorded
+ 4-1. open_video             [(c → s)]
+ 4-2. download(file_path)         [(c → s)]
+5. show live or show recored
+ 5-1. open_video : send_data()         [(s → c)]
+ 5-2. download : send_video(file_path)      [(s → c)]
